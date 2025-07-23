@@ -60,12 +60,34 @@ document.addEventListener('DOMContentLoaded', function() {
   // STEP 4: FORM SUBMISSION TO FIREBASE
   // ========================================
   if (form) {
+    // Section B: 选择Other时显示必填文本框
+    form.addEventListener('change', function(e) {
+      if (e.target.name === 'mostSensitive') {
+        const otherBox = document.getElementById('other-textarea-container');
+        if (e.target.value === 'other') {
+          otherBox.style.display = '';
+        } else {
+          otherBox.style.display = 'none';
+          document.getElementById('mostSensitiveOther').value = '';
+        }
+      }
+    });
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      // 收集所有表单数据
-      const data = Object.fromEntries(new FormData(form).entries());
-      data.timestamp = Date.now();
-      // 推送到 surveyResponses 节点
+      const formData = new FormData(form);
+      const mostSensitive = formData.get('mostSensitive');
+      const mostSensitiveOther = formData.get('mostSensitiveOther') || '';
+      if (mostSensitive === 'other' && mostSensitiveOther.trim() === '') {
+        alert('Please specify the other sensitive theme.');
+        document.getElementById('mostSensitiveOther').focus();
+        return;
+      }
+      // 只提交Section B内容
+      const data = {
+        mostSensitive,
+        mostSensitiveOther,
+        timestamp: Date.now()
+      };
       database.ref('surveyResponses').push(data)
         .then(function() {
           form.reset();

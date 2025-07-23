@@ -74,148 +74,22 @@
     <p>This questionnaire explores how various political themes in video games are perceived around the world. Your responses will help us map cultural and regulatory sensitivity boundaries across countries and regions.</p>
     <form id="survey-form">
       <fieldset>
-        <legend>Section A: About You</legend>
-        <label>Country of residence (please specify):<br>
-          <input type="text" name="country" required>
-        </label>
-        <div class="radio-group">
-          <p>Age range:</p>
-          <label><input type="radio" name="age" value="Under 18" required> Under 18</label>
-          <label><input type="radio" name="age" value="18–24"> 18–24</label>
-          <label><input type="radio" name="age" value="25–34"> 25–34</label>
-          <label><input type="radio" name="age" value="35–44"> 35–44</label>
-          <label><input type="radio" name="age" value="45–54"> 45–54</label>
-          <label><input type="radio" name="age" value="55–64"> 55–64</label>
-          <label><input type="radio" name="age" value="65+"> 65+</label>
+        <legend>Sensitivity Voting</legend>
+        <div class="radio-group pixel-vote-group">
+          <p style="margin-bottom:16px;">Which of the following political themes would be considered the most sensitive in your country if depicted in a video game?</p>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="1" required><span>1. Depiction of one country “colonizing” or exerting control over another</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="2"><span>2. Role reversal of historical oppressor vs. oppressed</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="3"><span>3. Use of real‑world national stereotypes or caricatures</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="4"><span>4. Graphic violence in a political or imperial context</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="5"><span>5. Satire or parody of real political figures or events</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="6"><span>6. References to “empire,” “colonialism,” “occupation,” or similar concepts</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="7"><span>7. Depiction of current or recent real‑world conflicts</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="8"><span>8. Presentation of extremist ideologies or symbols</span></label>
+          <label class="pixel-radio"><input type="radio" name="mostSensitive" value="other"><span>Other (please specify below)</span></label>
         </div>
-        <div class="radio-group">
-          <p>Gender:</p>
-          <label><input type="radio" name="gender" value="Female" required> Female</label>
-          <label><input type="radio" name="gender" value="Male"> Male</label>
-          <label><input type="radio" name="gender" value="Non‑binary / Third gender"> Non‑binary / Third gender</label>
-          <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+        <div id="other-textarea-container" style="display:none;margin-top:8px;">
+          <textarea name="mostSensitiveOther" id="mostSensitiveOther" rows="2" placeholder="Please specify the other sensitive theme..."></textarea>
         </div>
-        <div class="radio-group">
-          <p>How often do you play video games?</p>
-          <label><input type="radio" name="frequency" value="Never" required> Never</label>
-          <label><input type="radio" name="frequency" value="Occasionally (once a month or less)"> Occasionally (once a month or less)</label>
-          <label><input type="radio" name="frequency" value="Regularly (once a week)"> Regularly (once a week)</label>
-          <label><input type="radio" name="frequency" value="Frequently (multiple times a week)"> Frequently (multiple times a week)</label>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Section B: Sensitivity Ratings<br><small>(1 = Not at all sensitive … 5 = Extremely sensitive)</small></legend>
-        <table>
-          <thead>
-            <tr>
-              <th>Theme</th>
-              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1. Depiction of one country “colonizing” or exerting control over another</td>
-              <td><input type="radio" name="theme1" value="1" required></td>
-              <td><input type="radio" name="theme1" value="2"></td>
-              <td><input type="radio" name="theme1" value="3"></td>
-              <td><input type="radio" name="theme1" value="4"></td>
-              <td><input type="radio" name="theme1" value="5"></td>
-            </tr>
-            <tr>
-              <td>2. Role reversal of historical oppressor vs. oppressed</td>
-              <td><input type="radio" name="theme2" value="1" required></td>
-              <td><input type="radio" name="theme2" value="2"></td>
-              <td><input type="radio" name="theme2" value="3"></td>
-              <td><input type="radio" name="theme2" value="4"></td>
-              <td><input type="radio" name="theme2" value="5"></td>
-            </tr>
-            <tr>
-              <td>3. Use of real‑world national stereotypes or caricatures</td>
-              <td><input type="radio" name="theme3" value="1" required></td>
-              <td><input type="radio" name="theme3" value="2"></td>
-              <td><input type="radio" name="theme3" value="3"></td>
-              <td><input type="radio" name="theme3" value="4"></td>
-              <td><input type="radio" name="theme3" value="5"></td>
-            </tr>
-            <tr>
-              <td>4. Graphic violence in a political or imperial context</td>
-              <td><input type="radio" name="theme4" value="1" required></td>
-              <td><input type="radio" name="theme4" value="2"></td>
-              <td><input type="radio" name="theme4" value="3"></td>
-              <td><input type="radio" name="theme4" value="4"></td>
-              <td><input type="radio" name="theme4" value="5"></td>
-            </tr>
-            <tr>
-              <td>5. Satire or parody of real political figures or events</td>
-              <td><input type="radio" name="theme5" value="1" required></td>
-              <td><input type="radio" name="theme5" value="2"></td>
-              <td><input type="radio" name="theme5" value="3"></td>
-              <td><input type="radio" name="theme5" value="4"></td>
-              <td><input type="radio" name="theme5" value="5"></td>
-            </tr>
-            <tr>
-              <td>6. References to “empire,” “colonialism,” “occupation,” or similar concepts</td>
-              <td><input type="radio" name="theme6" value="1" required></td>
-              <td><input type="radio" name="theme6" value="2"></td>
-              <td><input type="radio" name="theme6" value="3"></td>
-              <td><input type="radio" name="theme6" value="4"></td>
-              <td><input type="radio" name="theme6" value="5"></td>
-            </tr>
-            <tr>
-              <td>7. Depiction of current or recent real‑world conflicts</td>
-              <td><input type="radio" name="theme7" value="1" required></td>
-              <td><input type="radio" name="theme7" value="2"></td>
-              <td><input type="radio" name="theme7" value="3"></td>
-              <td><input type="radio" name="theme7" value="4"></td>
-              <td><input type="radio" name="theme7" value="5"></td>
-            </tr>
-            <tr>
-              <td>8. Presentation of extremist ideologies or symbols</td>
-              <td><input type="radio" name="theme8" value="1" required></td>
-              <td><input type="radio" name="theme8" value="2"></td>
-              <td><input type="radio" name="theme8" value="3"></td>
-              <td><input type="radio" name="theme8" value="4"></td>
-              <td><input type="radio" name="theme8" value="5"></td>
-            </tr>
-          </tbody>
-        </table>
-      </fieldset>
-      <fieldset>
-        <legend>Section C: Legal & Regulatory Concerns</legend>
-        <p>Are any of these themes subject to legal restrictions or censorship in your country?</p>
-        <div class="radio-group">
-          <label><input type="radio" name="legal" value="Yes" required> Yes</label>
-          <label><input type="radio" name="legal" value="No"> No</label>
-          <label><input type="radio" name="legal" value="Unsure"> Unsure</label>
-        </div>
-        <label>If “Yes,” please specify which theme(s) and describe the restriction:<br>
-          <textarea name="legalDetails" rows="2"></textarea>
-        </label>
-        <p>Would you personally avoid playing a video game because it includes any of these themes?</p>
-        <div class="radio-group">
-          <label><input type="radio" name="avoid" value="Yes, definitely" required> Yes, definitely</label>
-          <label><input type="radio" name="avoid" value="Maybe, depending on context"> Maybe, depending on context</label>
-          <label><input type="radio" name="avoid" value="No"> No</label>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Section D: Open‑Ended Feedback</legend>
-        <label>Please list any other political topics in video games that you find sensitive or controversial in your culture:<br>
-          <textarea name="otherTopics" rows="3"></textarea>
-        </label>
-        <label>In your view, how well do video games generally handle political themes?<br>
-          <select name="handling" required>
-            <option value="">Select…</option>
-            <option>Very poorly</option>
-            <option>Poorly</option>
-            <option>Adequately</option>
-            <option>Well</option>
-            <option>Very well</option>
-          </select>
-        </label>
-        <label>Comments:<br>
-          <textarea name="comments" rows="3"></textarea>
-        </label>
       </fieldset>
       <button type="submit">Submit</button>
     </form>
